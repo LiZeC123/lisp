@@ -10,6 +10,7 @@ functionList = []
 for filename in os.listdir():
 	if rule.match(filename) :	
 		stdFile.write('\n\n;--------'+filename+'--------\n')
+		stdFile.write('(display "\n'+filename+'")\n')
 		file = open(filename,'r')
 
 		for line in file.readlines():

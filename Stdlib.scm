@@ -1,6 +1,8 @@
 
 
 ;--------abs.scm--------
+(display "
+abs.scm")
 (define (abs x)
   (cond ((> x 0) x)
 	((= x 0) 0)
@@ -11,6 +13,8 @@
 
 
 ;--------accumulate.scm--------
+(display "
+accumulate.scm")
 ;acculate the sum of term(x) from a to b
 ;combiner	: combiner the part sum and term(x)
 ;null-value	: begin value
@@ -26,6 +30,8 @@
 ;Value: accumulate
 
 ;--------get_root_by_iter.scm--------
+(display "
+get_root_by_iter.scm")
 
 (define (get-root-by-iter f guess)
   (define N 10000)
@@ -57,6 +63,8 @@
 
 
 ;--------listfunction.scm--------
+(display "
+listfunction.scm")
 ;get the value in the list of given index
 (define (list-ref items n)
   (if (= n 0)
@@ -118,6 +126,8 @@
 
 
 ;--------max3.scm--------
+(display "
+max3.scm")
 (DEFINE (max3 a b c)
   (cond ((and (> a c) (> b c)) (+ a b))
 	((and (> a b) (> c b)) (+ a c))
@@ -127,5 +137,7 @@
 
 
 ;--------square.scm--------
+(display "
+square.scm")
 (define (square x)
 	(* x x))
