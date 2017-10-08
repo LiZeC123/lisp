@@ -2,6 +2,7 @@ Scheme Functions
 ===================
 This is a repo about scheme funcions which could be used in other projects. Allmost all the functions come from the textbook `Structure and Interpretation of Computer Programs`, and I have taken note for this book, you can read this note from this [link.](http://lizec.top/2017/09/01/%E3%80%8ASICP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/) The following is a part of this note.
 
+---------------------------------------------------
 
 ## About This Book
 `Structure and Interpretation of Computer Programs`(also named as  `SICP`) is a textbook about the principles of computer programming,such as abstraction in programming, metalinguistic abstracion, recursion, interpreters, and modular programming. It is widely considered a classic text in computer science. SCIP focuses on finding general patterns from specific problem and building software tools that embody each pattern. 
@@ -27,7 +28,7 @@ C-x C-f  | open a new file
 C-x o    | switching windows
 C-x 0    | close this windows
 
-For more commands, You can read the article written by me `<<Edwin笔记>>`
+For more commands, You can read the article written by me [<<Edwin笔记>>](http://lizec.top/2017/08/04/Edwin%E7%AC%94%E8%AE%B0/)
 
 ......</br></br>
 For more note, goto [here](http://lizec.top/2017/09/01/%E3%80%8ASICP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/).
