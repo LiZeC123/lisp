@@ -1,117 +1,34 @@
 Scheme Functions
 ===================
-this is a repo about scheme funcions and some notes
+This is a repo about scheme funcions which could be used in other projects. Allmost all the functions come from the textbook `Structure and Interpretation of Computer Programs`, and I have taken note for this book, you can read this note from this [link.](http://lizec.top/2017/09/01/%E3%80%8ASICP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/) The following is a part of this note.
 
+---------------------------------------------------
 
-Expressions
-=============
-``` scheme
-486
+## About This Book
+`Structure and Interpretation of Computer Programs`(also named as  `SICP`) is a textbook about the principles of computer programming,such as abstraction in programming, metalinguistic abstracion, recursion, interpreters, and modular programming. It is widely considered a classic text in computer science. SCIP focuses on finding general patterns from specific problem and building software tools that embody each pattern. 
 
-(+ 137 248)
-;Value: 385
+## How to Start Learning This Book
+1. Get this book.
+2. Get Scheme dialect of Lisp.
+3. Get all code of this book.
 
-(* 2.7 12)
-;Value: 32.400000000000006
+You can get all of those above from https://mitpress.mit.edu/sicp/
 
-(+ (* 3
-      (+ (* 2 4)
-	 (+ 3 5)))
-   (+ (- 10 7)
-      6))
-;Value: 57
-```
----------
+## How to Use Edwin
+When I first tried to learn Sheme, I had a lot of problem about how to use the interpreter. One of the main reason is that Edwin is an Emacs-like editor, which is not easy for beginner to use. Therefore, I want to give an outline of Edwin. Edwin is an Emace-like editor, that is, all the usages of Edwin are almost same as Emacs. Emacs is a famous editor in Linux platforms and almost all the commands used by Emacs are begin with Ctrl key or Alt key.Now I give some the most used commands to help beginner to use Edwin. In the following, the prefix `C-` refers to the Ctrl key. For example, `C-x` means to simultaneously press the `Ctrl` key and the `x` key.
 
-Naming and the Environment
-=====================
-``` Scheme
-(define size 2)
-;Value: size
+command  | means
+:--------|:-------------------------------------
+C-x c    | close Edwin and back to interpreter
+M-z		 | evalute the expression
+C-i		 | auto indent
+M-/		 | auto complete
+C-x C-s  | save this file
+C-x C-f  | open a new file
+C-x o    | switching windows
+C-x 0    | close this windows
 
-(* size 5)
-;Value: 10
+For more commands, You can read the article written by me [<<Edwin笔记>>](http://lizec.top/2017/08/04/Edwin%E7%AC%94%E8%AE%B0/)
 
-(define PI 3.1415)
-;Value: pi
-
-(* 2 PI size)
-;Value: 12.566
-```
- 
-Applicative order versus normal order
-=========
-## Applicative order
-- To evaluate a combination, do the following:
-    - Evaluate the subexpressions of the combination.
-    - Apply the proceduce that is the value of the leftmost subexpression (the operator) to the arguments that are the values of the other subexpressions.
-
-## Normal order
-- To eva;uate a combination, do the following:
-    - Not evaluate a combination until its value was needed.
-    - substitute operand expressions for parameters until it obtained an expression involving only primitive operators,and would then preform the evaluation.
-
-## What is used in Scheme?
-- Lisp uses applicative-order evaluation,partly because of the additional efficiency obtained from avoiding multiple evaluation of ecpressions.
-- normal-order evaluation becomes much more complicated to deal with when we leave the realm of procedures that can be modeled by substitution.
-- On rhe other hand, normal-order evaluation can be an extremely valuable tool.
-
-
-Condtional Expressions and Predicates
-====================================
-``` Scheme
-(define (abs x)
-  (cond ((> x 0) x)
-	((= x 0) 0)
-	((< x 0) (- x))))
-;Value: abs
-
-(cond (<p1> <e1>)
-      (<p2> <e2>)
-      ...
-      (<p3> <e3>))
-
-General From
-(define (abs x)
-  (if (< x 0)
-      (- x)
-      x))
-;Value: abs
-
-General Form
-(if <predicate> <consequent> <alternative>)
-```
-- Conditional expressions are evaluated as follows.
-    - The predicate <p1> is evaluated first. If its value is false, then <p2> is evaluated.
-    - If <p2>'s value is also false, then <p3> is evaluated.
-    - This process continues until a predicate is found whose value is true, in which case the interpreter returns the value of the corresponding consequent expression.
-    - If none of the <p>'s value is true, the value of the cond is undefined.
-- If expressions are evaluated as follows.
-    - The interpreter starts by eva;uating the <predicate> part of expression.
-    - If the <predicate> evaluates to a true value,the interpreter then evaluates the <consequent> and return its values
-    - Otherwise it evaluates the <alternative> and return its values.
-
-
-## Logic
-- (and <e1> ... <en>)
-- (or <e1> ... <en>)
-- (not <e>)
-
-(define (sqrt x)
-  (define (good-enough? guess x)
-    (< (abs (- guess x)) 0.001))
-  (define (improve guess)
-    (/ (+ guess (/ x guess)) 2))
-  (define (s-iter guess)
-    (if (good-enough? guess)
-	guess
-	(s-iter (improve guess))))
-  (s-iter 1.0))
-
-(sqrt 2)
-
-
-
-
-
-
+......</br></br>
+For more note, goto [here](http://lizec.top/2017/09/01/%E3%80%8ASICP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/).
